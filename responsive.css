@@ -1,0 +1,249 @@
+/* =============================================
+   responsive.css — Mobile, Tablet, Desktop
+   ============================================= */
+
+/* ----- Base (Mobile First: < 640px) ----- */
+
+.container {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.nav-links {
+  display: none;
+}
+.nav-cta {
+  display: none;
+}
+.hamburger {
+  display: flex;
+}
+
+.hero-heading {
+  font-size: clamp(2.4rem, 10vw, 8rem);
+  line-height: 1.05;
+}
+
+.hero-grid {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+
+@media (max-width: 768px) {
+  .containerr {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-image-col {
+    flex:none;
+    margin-top:20px;
+    justify-content: center;/* Centers image when stacked */
+  }
+
+  .about-image-wrap {
+    max-width: 320px; /* Makes image more mobile-friendly */
+    margin: 0 auto;
+  }
+}
+
+
+
+.services-grid {
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.project-item {
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items:start;
+}
+
+.project-item .project-img-wrap,
+.project-item .project-info {
+  order: unset;
+}
+
+
+.process-grid {
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.testimonials-grid {
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.contact-grid {
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.footer-inner {
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+}
+
+.section-header-row {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-header-row p {
+  max-width: 100%;
+}
+
+/* ----- Tablet (640px – 1023px) ----- */
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-heading {
+    font-size: clamp(3rem, 8vw, 8rem);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* ----- Desktop (1024px+) ----- */
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+  .nav-cta {
+    display: flex;
+  }
+  .hamburger {
+    display: none;
+  }
+
+  
+
+  .about-image-col {
+    order: 1;
+  }
+  .about-text-col {
+    order: 2;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .project-item {
+    grid-template-columns: 7fr 5fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .project-item.reverse {
+    grid-template-columns: 5fr 7fr;
+  }
+
+  .project-item .project-img-wrap {
+    order: 1;
+  }
+  .project-item .project-info {
+    order: 2;
+  }
+
+  .project-item.reverse .project-img-wrap {
+    order: 2;
+  }
+  .project-item.reverse .project-info {
+    order: 1;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .section-header-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .footer-inner {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .hero-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+
+/* ----- Large Desktop (1280px+) ----- */
+
+@media (min-width: 1280px) {
+  .container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* ----- Reduced Motion ----- */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .hero-badge,
+  .hero-heading,
+  .hero-sub,
+  .hero-cta,
+  .hero-stats {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+  }
+}
